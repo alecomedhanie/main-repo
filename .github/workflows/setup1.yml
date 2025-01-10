@@ -1,0 +1,28 @@
+on:
+  workflow_call
+
+jobs:
+  init:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v4  # Clones the repository with Terraform config files
+
+      - name: Set up Terraform
+        uses: hashicorp/setup-terraform@v2
+
+      - name: Initialise
+        run: terraform init
+        
+      - name: List directory contents
+        run: ls -la # Initializes Terraform, downloads providers and modules
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: test2  # Name the artifact
+          path: test2.zip
+          #path: |
+            #./.terraform.lock.hcl
+            #./test.tf
+            #./.terraform
