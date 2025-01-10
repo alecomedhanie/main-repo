@@ -20,8 +20,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: test2  # Name the artifact
-          path: test2.zip
+          name: test  # Name the artifact
+          path: test.zip
           #path: |
             #./.terraform.lock.hcl
             #./test.tf
