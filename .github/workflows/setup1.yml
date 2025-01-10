@@ -9,7 +9,7 @@ jobs:
         uses: actions/checkout@v4  # Clones the repository with Terraform config files
 
       - name: Set up Terraform
-        uses: hashicorp/setup-terraform@v1
+        uses: hashicorp/setup-terraform@v2
 
       - name: Initialise
         run: terraform init
