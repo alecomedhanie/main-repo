@@ -13,8 +13,8 @@ jobs:
 
   setup:  # Use setup.yaml to install and initialize Terraform
     needs: [build, startup]
-    uses: alecomedhanie/main-repo/.github/workflows/setup1.yml@main   
+    uses: ./.github/workflows/setup1.yml
 
   checkov:
     needs: setup  # This job will run after the AWS credentials are configured
-    uses: alecomedhanie/main-repo/.github/workflows/tests2.yml@main 
+    uses: ./.github/workflows/tests2.yml 
