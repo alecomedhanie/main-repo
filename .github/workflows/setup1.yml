@@ -20,5 +20,5 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: test.zip
-          path: test.zip
+          name: test2
+          path: test2.tf
