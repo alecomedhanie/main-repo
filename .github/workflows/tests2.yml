@@ -7,13 +7,7 @@ jobs:
   # This workflow contains a single job called "scan"
   scan:
     runs-on: ubuntu-latest
-    steps:
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          role-to-assume: arn:aws:iam::203918868115:role/github.to.aws.cicd
-          aws-region: us-east-2
-          
+    steps:   
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
