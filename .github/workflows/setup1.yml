@@ -17,12 +17,6 @@ jobs:
       - name: List files before zipping
         run: ls -la
 
-      - name: Create zip file
-        run: zip -r test.zip .terraform.lock.hcl test2.tf .terraform
-
-      - name: List files after zipping
-        run: ls -la
-
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
