@@ -15,8 +15,15 @@ jobs:
         
       - name: List downloaded files
         run: ls -la 
+      
+      - name: Unzip the artifact
+        run: unzip test.zip -d ./unzip_dir
+
+      - name: List contents of unzipped directory
+        run: ls -la ./unzip_dir  
         
-      - run: terraform fmt test
+      - name: Format Terraform files
+        run: terraform fmt ./unzip_dir/test
     
       - name: Checkov GitHub Action
         uses: bridgecrewio/checkov-action@v12
