@@ -17,4 +17,4 @@ jobs:
 
   checkov:
     needs: setup  # This job will run after the AWS credentials are configured
-    uses: alecomedhanie/main-repo/.github/workflows/tests1.yaml@main 
+    uses: alecomedhanie/main-repo/.github/workflows/tests2.yaml@main 
