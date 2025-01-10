@@ -16,9 +16,12 @@ jobs:
       - name: List downloaded files
         run: ls -la 
         
+      - name: Terraform init
+        run: terraform init
+        
       - name: Format Terraform files
         run: terraform fmt
-    
+        
       - name: Checkov GitHub Action
         uses: bridgecrewio/checkov-action@v12
         with:
