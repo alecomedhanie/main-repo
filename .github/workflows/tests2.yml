@@ -11,19 +11,13 @@ jobs:
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
-          name: test.zip
+          name: test2.tf
         
       - name: List downloaded files
         run: ls -la 
-      
-      - name: Unzip the artifact
-        run: unzip test.zip -d ./unzip_dir
-
-      - name: List contents of unzipped directory
-        run: ls -la ./unzip_dir  
         
       - name: Format Terraform files
-        run: terraform fmt ./unzip_dir/test
+        run: terraform fmt
     
       - name: Checkov GitHub Action
         uses: bridgecrewio/checkov-action@v12
