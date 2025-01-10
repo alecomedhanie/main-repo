@@ -1,0 +1,20 @@
+on:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+      - run: echo "Hello"
+
+  startup:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "hello"
+
+  setup:  # Use setup.yaml to install and initialize Terraform
+    needs: [build, startup]
+    uses: alecomedhanie/main-repo/.github/workflows/setup1.yaml@main   
+
+  checkov:
+    needs: setup  # This job will run after the AWS credentials are configured
+    uses: alecomedhanie/main-repo/.github/workflows/tests1.yaml@main 
